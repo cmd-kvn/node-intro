@@ -1,8 +1,6 @@
 const fs = require('fs');
 
-fs.readFile('package.json', function (err, data) {
-    if (err) throw err; // err is an error object 
-    // 'throw err' will stop execution
-    console.log(data);
-})
+const data = fs.readFileSync('package.json');
+console.log(data); // waits for fs.readFileSync to finish before logging 'springbreak'
 console.log('springbreak');
+/* fs.readFile before console.log('springbreak') will print 'springbreak' before 'data' */
