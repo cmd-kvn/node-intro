@@ -5,7 +5,7 @@ describe('the optionsParser', () => {
     it('converts arguments to ints', () => {
         let result = optionsParser(['add', '2', '3']);
         // use deepEqual for object or array comparison
-        assert.deepEqual({ func: 'add', x: 2, y: 3 }, result);
+        assert.deepEqual({ func: 'add', operands: [2, 3] }, result);
     });
 
     it('throws an error if arguments are not ints', () => {

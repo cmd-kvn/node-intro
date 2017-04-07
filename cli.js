@@ -7,7 +7,7 @@ const argv = process.argv; // the array of strings of all inputs in the command 
 const options = optionsParser(process.argv.slice(2));
 
 if(options.func === 'add'){
-    let result = calculator.add(options.x, options.y);
+    let result = calculator.add(options.operands);
     console.log('add result is', result);
 }
 

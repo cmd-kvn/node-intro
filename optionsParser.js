@@ -2,15 +2,15 @@
 
 module.exports = function (options){
     const func = options[0];
-    const x = parseInt(options[1]);
-    const y = parseInt(options[2]);
+    const operands = options.slice(1); // slice after options[0] (func)
+    const operandsAsInts = operands.map(currentVal => {
+        currentVal = parseInt(currentVal);
+        if(isNaN(currentVal)) throw new Error ('your string trippin, son');
+        return currentVal;
+    })
 
-    if(isNaN(x) || isNaN(y)){
-        throw new Error('your string trippin, son')
-    }
     return {
         func,
-        x, 
-        y
+        operands: operandsAsInts
     }
 }
