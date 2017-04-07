@@ -22,13 +22,18 @@ describe('how the calculator works', () => {
 
     describe('it divides', () => {
         it('knows how to divide two numbers', () => {
-            let result = calc.divide(9, 3);
+            let result = calc.divide([9, 3]);
             assert.equal(result, 9/3);  
         });
 
         it('knows how to handle division by 0', () => {
-            let result = calc.divide(9, 0);
+            let result = calc.divide([9, 0]);
             assert.equal(result, 'Infinity');
+        });
+
+        it('knows how to divide multiple numbers', () => {
+            let result = calc.divide([500, 5, 10]);
+            assert.equal(result, 10);
         });
 
     });

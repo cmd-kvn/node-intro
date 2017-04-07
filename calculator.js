@@ -14,7 +14,13 @@ module.exports = {
         return sum;
     },
     foo, // es6 for foo: foo
-    divide: (x, y) => { return x / y }
+    divide: (operands) => { 
+        let quotient = operands.reduce(function (acc, curr) {
+            acc /= curr;
+            return acc;
+        });
+        return quotient; 
+    }
 
 
 }

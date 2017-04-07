@@ -12,6 +12,6 @@ if(options.func === 'add'){
 }
 
 if(options.func === 'divide'){
-    let result = calculator.divide(options.x, options.y);
+    let result = calculator.divide(options.operands);
     console.log('divide result is', result);
 }
